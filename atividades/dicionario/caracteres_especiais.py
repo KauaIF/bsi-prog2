@@ -1,11 +1,22 @@
 txt = input().lower() 
 dicio = {}
 dicio['a'] = "àáâäæãåā"
+dicio['A'] = "ÀÁÂÄÆÃÅĀ"
+
 dicio['e'] = "èéêëẽ"
+dicio['E'] = ""
+
 dicio['i'] = "ìíîïĩ"
+dicio['I'] = "ÌÍÎÏĨ"
+
 dicio['o'] = "òóôöõ"
+dicio['U'] = "ÒÓÔÖÕ"
+
 dicio['u'] = "ùúûüũ"
+dicio['U'] = "ÙÚÛÜŨ"
+
 dicio['c'] = "ç"
+dicio['C'] = "Ç"
 
 saida = ""
 especial = False
