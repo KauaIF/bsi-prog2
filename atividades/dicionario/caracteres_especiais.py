@@ -1,4 +1,4 @@
-txt = input().lower() 
+txt = input()
 dicio = {}
 dicio['a'] = "àáâäæãåā"
 dicio['A'] = "ÀÁÂÄÆÃÅĀ"
