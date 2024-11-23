@@ -1,7 +1,9 @@
 def dicioMaiorQue170(dicio):
 	saida = {}
+	#para cada chave 'k' e valor 'v' do dicionario
 	for k,v in dicio.items():
 		if v >= 170:
+			#registre apenas os maiores que 170
 			saida[k] = v
 	return saida
 def main():

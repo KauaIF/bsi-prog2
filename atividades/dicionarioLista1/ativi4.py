@@ -2,7 +2,9 @@
 
 def dicioMaiorQue170(dicio):
 	saida = {}
+	#para cada chave 'k' e valor 'v' do dicionario
 	for k,v in dicio.items():
+		#registre apenas os maiores que 1.75 e mais de 70kg
 		if (v[0] > 1.75) and (v[1] > 70):
 			saida[k] = v
 	return saida
