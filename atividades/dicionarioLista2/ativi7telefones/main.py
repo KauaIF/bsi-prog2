@@ -2,8 +2,8 @@ import os
 #função que abre o arquivo e registra os dados
 def carregar(n_arq:str)->dict:
     #dicionario a ser preenchido 'D'
-    D = {}
     arq = open(n_arq,'rt')
+    D = {}
     linha = arq.readline()
     while linha != "":
         #Para toda linha não vazia vou retirar a quebra de linha do
@@ -15,25 +15,29 @@ def carregar(n_arq:str)->dict:
         D[lst[0]]=lst[1:]
         #leia uma nova linha e começe o ciclo de novo
         linha = arq.readline()
+    arq.close()
     #retorna um dicionário com os números e quantas vezes apareceram
     return D
 def inserir(arq,tel,nome,email):
     base = carregar(arq)
     if bool(base.get(tel,False)):
-        ans = input("O contato já existe deseja substituir? [s/N]")
+        ans = input("O contato já existe deseja substituir? [s/N]\n")
         if ans=='s':
             base[tel] = [nome,email]
             a = open(arq,"wt")
             for i in base.keys():
                 escreva = i
-                for dado in base[i]:
-                    escreva += f",{dado}"
-                a.write(escreva)
+                escreva += f",{base[i][0]},{base[i][1]}"
+                a.write(f"{escreva}\n")
+            print("atualizado com sucesso")
         else:
             print('ação cancelada')
     else:
-        print('aaa')
-    input()
+        a = open(arq,"at")
+        a.write(f"\n{tel},{nome},{email}")
+        print('inserido com sucesso')
+    a.close()
+    input("Pressione qualquer tecla para prosseguir")
 
 def main():
     os.system("cls")
